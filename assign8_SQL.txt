@@ -1,0 +1,73 @@
+\T assign8_out.txt
+#Assignment 8
+#Matthew Rowe
+#z1714592
+#466-2
+#
+#Instruction 1
+#
+use z1714592;
+#
+#Instruction 2
+#
+create table assn8
+(
+pk int not null auto_increment,
+name varchar(15),
+primary key (pk)
+);
+#
+#Instruction 3
+#
+insert into assn8 (name)
+values (Matt, Mike, Miles, Caleb);
+#
+#Instruction 4
+#
+select * from assn8
+#
+#Instruction 5
+#
+alter table assn8 add Salary decimal(4,2)
+update assn8
+set Salary = 13.50;
+#
+#Instruction 6
+#
+select * from assn8;
+#
+#Instruction 7
+alter table assn8 add Hours int check (Hours<=60)
+update assn8
+set Hours = 35;
+#
+#Instruction 8
+#
+select * from assn8;
+#
+#Instruction 9
+#
+update assn8
+set Salary = 15.00
+where name='Matt'
+set salary = 14.00
+where name='Miles'
+set Hours = 40
+where name='Caleb'
+set Hours = 45
+where name='Mike';
+#
+#Instruction  10
+#
+select * from assn8;
+#
+#Instruction  11
+#
+delete from assn8
+where name='Miles';
+select * from assn8;
+#
+#Instruction  12
+#
+drop table assn8;
+
