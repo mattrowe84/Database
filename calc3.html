@@ -1,0 +1,101 @@
+<html>  
+<!--Matthew Rowe CSCI 466-2 -->
+<!--Grade Calculator - Assignment 5 -->  
+<head>  
+  
+<script language="javascript" type="text/javascript">  
+	function percent(){  
+		
+		//Values pulled from form fields
+		a=Number(document.calculator.number1.value);  
+		b=Number(document.calculator.number2.value);  
+		c=Number(document.calculator.number3.value);  
+		d=Number(document.calculator.number4.value);  
+		
+		//percentage calculation
+		e=((b/a*.7)+(d/c*.3))*100.00;  
+		document.calculator.total.value=e + "%"; 
+
+		//Decision structure for letter grade
+		if( e >= 92.0) {
+			document.calculator.total2.value="A";
+		}
+	
+		else if ( e < 92.0 && e >= 84.0){
+			document.calculator.total2.value="B";	
+		}
+		
+		else if ( e < 84.00 && e >= 76.00){
+			document.calculator.total2.value="C";
+		}
+		
+		else if ( e < 76.00 && e >= 68.00){
+			document.calculator.total2.value="D";
+		}
+		
+		else {
+			document.calculator.total2.value="F";
+		}
+		
+		elem = document.getElementById("demo");  
+		elem.innerHTML = "Remember, this is not your current score and it can change based on future grades.";                     
+	}	
+
+	function resetFunction() {
+			location.reload();
+	}
+	
+  
+</script>  
+  
+  
+</head>  
+
+	<h1>Grade Calculator</h1>
+	<h2>Matthew Rowe 466-2</h2>
+ 
+<body>  
+  
+	<!-- Opening a HTML Form. -->   
+	<form name="calculator">  
+		
+		<p>Enter your scores and calculate your grade thus far:</p> 
+		
+		<p>
+			
+		<!-- Here user will enter Total Assignment points. -->       
+		Total assignment points: <input type="text" name="number1">  
+		
+		<!-- Here user will enter their earned assignment points. -->
+		Your assignment points:  <input type="text" name="number2">   
+
+		</p>
+
+		<p>
+		
+		<!-- Here user will enter Total Test Points. -->       
+		Total test/quiz points:       <input type="text" name="number3">
+		
+		<!-- Here user will enter Their total test points. -->
+		Your test/quiz points:        <input type="text" name="number4">  
+			
+		</p>
+		
+		<!--Buttons one for calculate and one for clearing fields -->
+		<input type="button" value="Calculate" onclick="javascript:percent();">  
+		<button type="button" onclick="resetFunction()">Reset</button>
+  
+		
+		<p>
+		<!-- Here result for Letter grade and percentage will be displayed. -->   
+		Your current percentage thus far:   <input type="text" name="total">  
+		
+		Your current letter grade thus far: <input type="text" name="total2">
+		
+		</p>
+  
+	
+	</form>  
+   <p id="demo"></p>
+</body>  
+</html>  
